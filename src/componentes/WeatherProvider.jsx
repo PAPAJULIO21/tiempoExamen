@@ -14,37 +14,76 @@ function WeatherProvider (){
         <div>
             <h1>{tiempo.nombre}</h1>
 
-            <Table striped bordered hover>
+        <Table striped bordered hover>
         <thead>
-           
-        <tr>
-          <th>Ciudad</th>
-          <th>Fecha</th>
-          <th>Temperatura Maxima</th>
-          <th>Temperatura Minima</th>
-          <th>Velocidad Viento</th>
-          <th>Direccion Viento</th>
-          <th>LLuvia</th>
-          <th>Salida Sol</th>
-          <th>Puesta del Sol</th>
+            <tr>
+            <th>#</th>
+        {tiempo.fechas.map((item,index)=>(
+                
+                <th>{item.fecha}</th>
+        ))}
         </tr>
-      </thead>
+        </thead>
         <tbody>
-            {tiempo.fechas.map((item,index)=>(
-                <tr>
+            <tr>
+            <th>Ciudad</th>
+        {tiempo.fechas.map((item,index)=>(
                 <td>{tiempo.nombre}</td>
-                <td>{item.fecha}</td>
+           
+        ))}
+            
+            </tr>
+            <tr>
+                <th>Temperatura Maxima</th>
+                {tiempo.fechas.map((item,index)=>(
                 <td>{item.temperatura.maxima}</td>
+           
+        ))}
+            </tr>
+            <tr>
+                <th>Temperatura Minima</th>
+                {tiempo.fechas.map((item,index)=>(
                 <td>{item.temperatura.minima}</td>
+           
+        ))}
+            </tr>
+            <tr>
+                <th>Velocidad Viento</th>
+                {tiempo.fechas.map((item,index)=>(
                 <td>{item.viento.velocidad}</td>
+           
+        ))}
+            </tr>
+            <tr>
+                <th>Direccion Viento</th>
+                {tiempo.fechas.map((item,index)=>(
                 <td>{item.viento.direccion}</td>
+           
+        ))}
+            </tr>
+            <tr>
+                <th>LLuvia</th>
+                {tiempo.fechas.map((item,index)=>(
                 <td>{item.lluvia}</td>
+           
+        ))}
+            </tr>
+            <tr>
+                <th>Salida Sol</th>
+                {tiempo.fechas.map((item,index)=>(
                 <td>{item.sol.salida}</td>
+           
+        ))}
+            </tr>
+            <tr>
+                <th>Puesta del Sol</th>
+                {tiempo.fechas.map((item,index)=>(
                 <td>{item.sol.puesta}</td>
-                </tr>
-            ))}
-        
-            <tr></tr>
+           
+        ))}
+            </tr>
+
+
             </tbody>
         </Table>
         </div>
